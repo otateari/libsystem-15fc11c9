@@ -1,0 +1,176 @@
+{
+  "key": "functionsList",
+  "value": [
+    {
+      "id": "FUN-001",
+      "category": "書籍貸出管理",
+      "function_name": "利用者情報確認",
+      "description": "利用者番号から利用者情報と貸出中の書籍情報を検索し、表示する",
+      "input": "利用者番号",
+      "output": "利用者情報（氏名、住所、連絡先等）\n\n貸出中の書籍情報（書籍番号、書籍名、貸出期限）",
+      "user": "図書館職員"
+    },
+    {
+      "id": "FUN-002",
+      "category": "書籍貸出管理",
+      "function_name": "書籍貸出状態確認",
+      "description": "書籍番号から現在の貸出状態を確認する",
+      "input": "書籍番号",
+      "output": "貸出状態（貸出可能/貸出中）\n\n貸出中の場合、返却期限日",
+      "user": "図書館職員"
+    },
+    {
+      "id": "FUN-003",
+      "category": "書籍貸出管理",
+      "function_name": "貸出期限設定",
+      "description": "貸出日から3週間後の返却期限を設定する",
+      "input": "貸出日",
+      "output": "返却期限日",
+      "user": "図書館職員"
+    },
+    {
+      "id": "FUN-004",
+      "category": "書籍貸出管理",
+      "function_name": "貸出記録登録",
+      "description": "書籍の貸出情報を登録する",
+      "input": "利用者番号、書籍番号、貸出日、返却期限日",
+      "output": "貸出記録登録結果",
+      "user": "図書館職員"
+    },
+    {
+      "id": "FUN-005",
+      "category": "書籍返却管理",
+      "function_name": "返却書籍確認",
+      "description": "返却される書籍の貸出情報を確認する",
+      "input": "書籍番号",
+      "output": "貸出情報（利用者、貸出日、返却期限日）",
+      "user": "図書館職員"
+    },
+    {
+      "id": "FUN-006",
+      "category": "書籍返却管理",
+      "function_name": "返却処理",
+      "description": "書籍の返却処理を行う",
+      "input": "利用者番号、書籍番号、返却日",
+      "output": "返却処理結果",
+      "user": "図書館職員"
+    },
+    {
+      "id": "FUN-007",
+      "category": "書籍マスター管理",
+      "function_name": "書籍情報登録",
+      "description": "新規書籍の情報をマスターに登録する",
+      "input": "書籍情報（書籍番号、タイトル、著者、出版社）",
+      "output": "登録結果",
+      "user": "図書館職員"
+    },
+    {
+      "id": "FUN-008",
+      "category": "書籍マスター管理",
+      "function_name": "書籍情報更新",
+      "description": "既存の書籍情報を更新する",
+      "input": "更新する書籍情報",
+      "output": "更新結果",
+      "user": "図書館職員"
+    },
+    {
+      "id": "FUN-009",
+      "category": "延滞管理",
+      "function_name": "延滞書籍検索",
+      "description": "返却期限を過ぎた書籍を検索する",
+      "input": "検索日",
+      "output": "延滞書籍リスト",
+      "user": "システム管理者"
+    },
+    {
+      "id": "FUN-010",
+      "category": "延滞管理",
+      "function_name": "延滞通知メール送信",
+      "description": "延滞者に対して通知メールを送信する",
+      "input": "延滞者情報（利用者のメールアドレス、貸出情報）",
+      "output": "メール送信結果",
+      "user": "システム管理者"
+    },
+    {
+      "id": "FUN-011",
+      "category": "利用者管理",
+      "function_name": "利用者新規登録",
+      "description": "新規利用者の情報を登録する",
+      "input": "利用者情報（氏名、住所、メールアドレス、電話番号）",
+      "output": "利用者番号、登録結果",
+      "user": "図書館職員"
+    },
+    {
+      "id": "FUN-012",
+      "category": "利用者管理",
+      "function_name": "利用者情報更新",
+      "description": "既存の利用者情報を更新する",
+      "input": "更新する利用者情報",
+      "output": "更新結果",
+      "user": "図書館職員"
+    },
+    {
+      "id": "FUN-013",
+      "category": "貸出状況管理",
+      "function_name": "書籍別貸出状況確認",
+      "description": "指定された書籍の貸出状況を確認する",
+      "input": "書籍番号",
+      "output": "貸出状況（貸出中/返却済）、\n\n貸出中の場合は貸出期限日、返却済の場合は返却日",
+      "user": "図書館職員"
+    },
+    {
+      "id": "FUN-014",
+      "category": "貸出状況管理",
+      "function_name": "利用者別貸出状況確認",
+      "description": "指定された利用者の貸出状況を確認する",
+      "input": "利用者番号",
+      "output": "貸出中の書籍リスト",
+      "user": "図書館職員"
+    },
+    {
+      "id": "FUN-015",
+      "category": "延滞管理",
+      "function_name": "延滞記録管理",
+      "description": "延滞通知の送信記録を管理する",
+      "input": "延滞通知情報（送信日時、対象者、書籍情報）",
+      "output": "記録保存結果",
+      "user": "システム管理者"
+    },
+    {
+      "id": "FUN-016",
+      "category": "書籍マスター管理",
+      "function_name": "書籍重複チェック",
+      "description": "登録しようとする書籍が既に存在するかチェックする",
+      "input": "書籍情報（書籍番号、ISBN等）",
+      "output": "重複チェック結果",
+      "user": "図書館職員"
+    },
+    {
+      "id": "FUN-017",
+      "category": "利用者管理",
+      "function_name": "利用者重複チェック",
+      "description": "登録しようとする利用者が既に存在するかチェックする",
+      "input": "利用者情報（氏名、メールアドレス等）",
+      "output": "重複チェック結果",
+      "user": "図書館職員"
+    },
+    {
+      "id": "FUN-018",
+      "category": "貸出状況管理",
+      "function_name": "貸出統計情報出力",
+      "description": "期間別の貸出統計情報を出力する",
+      "input": "集計期間",
+      "output": "統計情報（貸出件数、返却件数、延滞件数）",
+      "user": "図書館職員"
+    },
+    {
+      "id": "FUN-019",
+      "category": "延滞管理",
+      "function_name": "延滞者リスト出力",
+      "description": "現在の延滞者リストを出力する",
+      "input": "なし",
+      "output": "延滞者リスト（利用者情報、延滞書籍情報、延滞日数）",
+      "user": "図書館職員"
+    }
+  ]
+}

@@ -1,0 +1,222 @@
+{
+  "key": "commonComponent",
+  "value": [
+    {
+      "id": "COM-001",
+      "category": "レイアウト",
+      "fileName": "Header.tsx",
+      "description": "全画面共通のヘッダーコンポーネント。ロゴ、ユーザー情報、ログアウトボタンを表示",
+      "props": "{user: {name: string, role: string}, onLogout: () => void}",
+      "screensIds": [
+        "SCR-001",
+        "SCR-002",
+        "SCR-003",
+        "SCR-004",
+        "SCR-005",
+        "SCR-006",
+        "SCR-007",
+        "SCR-008",
+        "SCR-009",
+        "SCR-010",
+        "SCR-011",
+        "SCR-012",
+        "SCR-013",
+        "SCR-014",
+        "SCR-015",
+        "SCR-016",
+        "SCR-017",
+        "SCR-018",
+        "SCR-019",
+        "SCR-020"
+      ]
+    },
+    {
+      "id": "COM-002",
+      "category": "レイアウト",
+      "fileName": "Footer.tsx",
+      "description": "全画面共通のフッターコンポーネント。著作権情報とリンクを表示",
+      "props": "{year: number}",
+      "screensIds": [
+        "SCR-001",
+        "SCR-002"
+      ]
+    },
+    {
+      "id": "COM-003",
+      "category": "レイアウト",
+      "fileName": "Sidebar.tsx",
+      "description": "サイドバーナビゲーションコンポーネント。メニュー項目と現在の画面位置を表示",
+      "props": "{activeMenu: string, userRole: string}",
+      "screensIds": [
+        "SCR-002",
+        "SCR-003",
+        "SCR-004",
+        "SCR-005",
+        "SCR-006",
+        "SCR-007",
+        "SCR-008",
+        "SCR-009",
+        "SCR-010",
+        "SCR-011",
+        "SCR-012",
+        "SCR-013",
+        "SCR-014",
+        "SCR-015",
+        "SCR-016",
+        "SCR-017",
+        "SCR-018",
+        "SCR-019",
+        "SCR-020"
+      ]
+    },
+    {
+      "id": "COM-004",
+      "category": "フォーム",
+      "fileName": "SearchForm.tsx",
+      "description": "共通の検索フォームコンポーネント。検索条件入力と検索実行機能を提供",
+      "props": "{onSearch: (searchParams: object) => void, searchFields: array}",
+      "screensIds": [
+        "SCR-003",
+        "SCR-006",
+        "SCR-008",
+        "SCR-011"
+      ]
+    },
+    {
+      "id": "COM-005",
+      "category": "データ表示",
+      "fileName": "DataTable.tsx",
+      "description": "データテーブル表示用の共通コンポーネント。ソート、ページネーション機能付き",
+      "props": "{data: array, columns: array, onSort: (key: string) => void, onPageChange: (page: number) => void}",
+      "screensIds": [
+        "SCR-005",
+        "SCR-006",
+        "SCR-008",
+        "SCR-011",
+        "SCR-019"
+      ]
+    },
+    {
+      "id": "COM-006",
+      "category": "フォーム",
+      "fileName": "LoginForm.tsx",
+      "description": "ログインフォームの共通コンポーネント。認証情報入力フォームを提供",
+      "props": "{onSubmit: (credentials: object) => void, error: string}",
+      "screensIds": [
+        "SCR-001"
+      ]
+    },
+    {
+      "id": "COM-007",
+      "category": "データ表示",
+      "fileName": "NotificationPanel.tsx",
+      "description": "通知情報を表示するパネルコンポーネント",
+      "props": "{notifications: array}",
+      "screensIds": [
+        "SCR-002"
+      ]
+    },
+    {
+      "id": "COM-008",
+      "category": "データ表示",
+      "fileName": "UserInfoCard.tsx",
+      "description": "利用者情報を表示するカードコンポーネント",
+      "props": "{user: object, loanHistory: array}",
+      "screensIds": [
+        "SCR-004"
+      ]
+    },
+    {
+      "id": "COM-009",
+      "category": "データ表示",
+      "fileName": "StatisticsPanel.tsx",
+      "description": "統計情報を表示するパネルコンポーネント",
+      "props": "{statistics: object}",
+      "screensIds": [
+        "SCR-007"
+      ]
+    },
+    {
+      "id": "COM-010",
+      "category": "レイアウト",
+      "fileName": "MenuCard.tsx",
+      "description": "メニューカード表示用の共通コンポーネント",
+      "props": "{title: string, icon: string, onClick: () => void}",
+      "screensIds": [
+        "SCR-009"
+      ]
+    },
+    {
+      "id": "COM-011",
+      "category": "フォーム",
+      "fileName": "BookForm.tsx",
+      "description": "書籍情報入力用の共通フォームコンポーネント",
+      "props": "{book?: object, onSubmit: (bookData: object) => void}",
+      "screensIds": [
+        "SCR-010",
+        "SCR-017"
+      ]
+    },
+    {
+      "id": "COM-012",
+      "category": "データ表示",
+      "fileName": "BookStatusCard.tsx",
+      "description": "書籍の貸出状況を表示するカードコンポーネント",
+      "props": "{book: object, loanHistory: array}",
+      "screensIds": [
+        "SCR-013"
+      ]
+    },
+    {
+      "id": "COM-013",
+      "category": "フォーム",
+      "fileName": "ReturnForm.tsx",
+      "description": "返却処理用の共通フォームコンポーネント",
+      "props": "{onSubmit: (returnData: object) => void}",
+      "screensIds": [
+        "SCR-014"
+      ]
+    },
+    {
+      "id": "COM-014",
+      "category": "データ表示",
+      "fileName": "NotificationPreview.tsx",
+      "description": "通知内容のプレビュー表示コンポーネント",
+      "props": "{notification: object, recipients: array}",
+      "screensIds": [
+        "SCR-015"
+      ]
+    },
+    {
+      "id": "COM-015",
+      "category": "データ表示",
+      "fileName": "StatisticsChart.tsx",
+      "description": "統計情報をグラフ表示するコンポーネント",
+      "props": "{data: array, type: string}",
+      "screensIds": [
+        "SCR-016"
+      ]
+    },
+    {
+      "id": "COM-016",
+      "category": "フォーム",
+      "fileName": "UserForm.tsx",
+      "description": "利用者情報入力用の共通フォームコンポーネント",
+      "props": "{user?: object, onSubmit: (userData: object) => void}",
+      "screensIds": [
+        "SCR-012",
+        "SCR-018"
+      ]
+    },
+    {
+      "id": "COM-017",
+      "category": "データ表示",
+      "fileName": "UserStatusCard.tsx",
+      "description": "利用者の貸出状況を表示するカードコンポーネント",
+      "props": "{user: object, currentLoans: array, loanHistory: array}",
+      "screensIds": [
+        "SCR-020"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "key": "nonFunctionsList",
+  "value": [
+    {
+      "id": "NON-001",
+      "category": "性能",
+      "non_function_name": "レスポンス時間",
+      "description": "画面遷移やデータ検索などの処理は3秒以内に完了すること"
+    },
+    {
+      "id": "NON-002",
+      "category": "可用性",
+      "non_function_name": "システム稼働時間",
+      "description": "図書館の開館時間（8:00-20:00）は常時利用可能であること"
+    },
+    {
+      "id": "NON-003",
+      "category": "セキュリティ",
+      "non_function_name": "アクセス制御",
+      "description": "利用者情報へのアクセスは認証された図書館職員のみに制限すること"
+    },
+    {
+      "id": "NON-004",
+      "category": "セキュリティ",
+      "non_function_name": "パスワード要件",
+      "description": "パスワードは8文字以上で、英大文字、英小文字、数字を含むこと"
+    },
+    {
+      "id": "NON-005",
+      "category": "バックアップ",
+      "non_function_name": "データバックアップ",
+      "description": "データベースの完全バックアップを毎日深夜に実施し、1ヶ月分保持すること"
+    },
+    {
+      "id": "NON-006",
+      "category": "性能",
+      "non_function_name": "同時アクセス数",
+      "description": "最大10名の図書館職員が同時に利用しても性能劣化しないこと"
+    },
+    {
+      "id": "NON-007",
+      "category": "可用性",
+      "non_function_name": "メンテナンス時間",
+      "description": "定期メンテナンスは図書館閉館後の20:00以降に実施すること"
+    },
+    {
+      "id": "NON-008",
+      "category": "運用保守",
+      "non_function_name": "ログ管理",
+      "description": "システムログ、操作ログ、エラーログを3ヶ月間保持すること"
+    },
+    {
+      "id": "NON-009",
+      "category": "拡張性",
+      "non_function_name": "データベース容量",
+      "description": "書籍10万件、利用者1万人分のデータを格納できること"
+    },
+    {
+      "id": "NON-010",
+      "category": "信頼性",
+      "non_function_name": "データ整合性",
+      "description": "貸出・返却処理でのトランザクション制御を適切に行い、データの整合性を保つこと"
+    }
+  ]
+}

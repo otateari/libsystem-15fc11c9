@@ -1,0 +1,6 @@
+{
+  "key": "erDiagram",
+  "value": {
+    "mermaid": "erDiagram\n    books {\n        uuid book_id PK\n        varchar13 isbn\n        varchar200 title\n        varchar100 author\n        varchar100 publisher\n        varchar20 status\n    }\n    users {\n        uuid user_id PK\n        varchar100 name\n        varchar255 email\n        varchar20 phone\n        varchar255 address\n    }\n    loans {\n        uuid loan_id PK\n        uuid book_id FK\n        uuid user_id FK\n        timestamp loan_date\n        timestamp due_date\n        timestamp return_date\n    }\n    overdue_notifications {\n        uuid notification_id PK\n        uuid loan_id FK\n        timestamp sent_date\n        varchar20 notification_type\n        varchar20 status\n    }\n    books ||--o{ loans : has\n    users ||--o{ loans : borrows\n    loans ||--o{ overdue_notifications : generates"
+  }
+}

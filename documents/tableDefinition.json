@@ -1,0 +1,225 @@
+{
+  "key": "tableDefinition",
+  "value": [
+    {
+      "id": "TAB-001",
+      "table": "books",
+      "column": "book_id",
+      "dataType": "uuid",
+      "regulation": "PRIMARY KEY",
+      "defaultValue": "uuid_generate_v4()",
+      "foreignKey": "",
+      "description": "書籍の一意識別子"
+    },
+    {
+      "id": "TAB-002",
+      "table": "books",
+      "column": "isbn",
+      "dataType": "varchar(13)",
+      "regulation": "NOT NULL, UNIQUE",
+      "defaultValue": "",
+      "foreignKey": "",
+      "description": "書籍のISBNコード"
+    },
+    {
+      "id": "TAB-003",
+      "table": "books",
+      "column": "title",
+      "dataType": "varchar(200)",
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "",
+      "description": "書籍タイトル"
+    },
+    {
+      "id": "TAB-004",
+      "table": "books",
+      "column": "author",
+      "dataType": "varchar(100)",
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "",
+      "description": "著者名"
+    },
+    {
+      "id": "TAB-005",
+      "table": "books",
+      "column": "publisher",
+      "dataType": "varchar(100)",
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "",
+      "description": "出版社名"
+    },
+    {
+      "id": "TAB-006",
+      "table": "books",
+      "column": "status",
+      "dataType": "varchar(20)",
+      "regulation": "NOT NULL",
+      "defaultValue": "'available'",
+      "foreignKey": "",
+      "description": "書籍の状態（available:貸出可能, borrowed:貸出中）"
+    },
+    {
+      "id": "TAB-007",
+      "table": "users",
+      "column": "user_id",
+      "dataType": "uuid",
+      "regulation": "PRIMARY KEY",
+      "defaultValue": "uuid_generate_v4()",
+      "foreignKey": "",
+      "description": "利用者の一意識別子"
+    },
+    {
+      "id": "TAB-008",
+      "table": "users",
+      "column": "name",
+      "dataType": "varchar(100)",
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "",
+      "description": "利用者氏名"
+    },
+    {
+      "id": "TAB-009",
+      "table": "users",
+      "column": "email",
+      "dataType": "varchar(255)",
+      "regulation": "NOT NULL, UNIQUE",
+      "defaultValue": "",
+      "foreignKey": "",
+      "description": "利用者メールアドレス"
+    },
+    {
+      "id": "TAB-010",
+      "table": "users",
+      "column": "phone",
+      "dataType": "varchar(20)",
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "",
+      "description": "利用者電話番号"
+    },
+    {
+      "id": "TAB-011",
+      "table": "users",
+      "column": "address",
+      "dataType": "varchar(255)",
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "",
+      "description": "利用者住所"
+    },
+    {
+      "id": "TAB-012",
+      "table": "loans",
+      "column": "loan_id",
+      "dataType": "uuid",
+      "regulation": "PRIMARY KEY",
+      "defaultValue": "uuid_generate_v4()",
+      "foreignKey": "",
+      "description": "貸出の一意識別子"
+    },
+    {
+      "id": "TAB-013",
+      "table": "loans",
+      "column": "book_id",
+      "dataType": "uuid",
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "books.book_id",
+      "description": "貸出書籍ID"
+    },
+    {
+      "id": "TAB-014",
+      "table": "loans",
+      "column": "user_id",
+      "dataType": "uuid",
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "users.user_id",
+      "description": "借出者ID"
+    },
+    {
+      "id": "TAB-015",
+      "table": "loans",
+      "column": "loan_date",
+      "dataType": "timestamp with time zone",
+      "regulation": "NOT NULL",
+      "defaultValue": "CURRENT_TIMESTAMP",
+      "foreignKey": "",
+      "description": "貸出日時"
+    },
+    {
+      "id": "TAB-016",
+      "table": "loans",
+      "column": "due_date",
+      "dataType": "timestamp with time zone",
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "",
+      "description": "返却期限日時"
+    },
+    {
+      "id": "TAB-017",
+      "table": "loans",
+      "column": "return_date",
+      "dataType": "timestamp with time zone",
+      "regulation": "",
+      "defaultValue": "null",
+      "foreignKey": "",
+      "description": "実際の返却日時"
+    },
+    {
+      "id": "TAB-018",
+      "table": "overdue_notifications",
+      "column": "notification_id",
+      "dataType": "uuid",
+      "regulation": "PRIMARY KEY",
+      "defaultValue": "uuid_generate_v4()",
+      "foreignKey": "",
+      "description": "延滞通知の一意識別子"
+    },
+    {
+      "id": "TAB-019",
+      "table": "overdue_notifications",
+      "column": "loan_id",
+      "dataType": "uuid",
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "loans.loan_id",
+      "description": "対象の貸出ID"
+    },
+    {
+      "id": "TAB-020",
+      "table": "overdue_notifications",
+      "column": "sent_date",
+      "dataType": "timestamp with time zone",
+      "regulation": "NOT NULL",
+      "defaultValue": "CURRENT_TIMESTAMP",
+      "foreignKey": "",
+      "description": "通知送信日時"
+    },
+    {
+      "id": "TAB-021",
+      "table": "overdue_notifications",
+      "column": "notification_type",
+      "dataType": "varchar(20)",
+      "regulation": "NOT NULL",
+      "defaultValue": "'email'",
+      "foreignKey": "",
+      "description": "通知種別（email:メール通知）"
+    },
+    {
+      "id": "TAB-022",
+      "table": "overdue_notifications",
+      "column": "status",
+      "dataType": "varchar(20)",
+      "regulation": "NOT NULL",
+      "defaultValue": "'sent'",
+      "foreignKey": "",
+      "description": "通知状態（sent:送信済み, failed:送信失敗）"
+    }
+  ]
+}

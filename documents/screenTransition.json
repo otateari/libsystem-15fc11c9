@@ -1,0 +1,29 @@
+{
+  "key": "screenTransition",
+  "value": [
+    {
+      "id": "書籍貸出管理",
+      "value": "{\n    \"mermaid\": \"graph LR\\n    Login[ログイン画面] --> Menu[メインメニュー]\\n    Menu --> BookLending[書籍貸出画面]\\n    BookLending --> UserInfo[利用者情報確認画面]\\n    UserInfo --> BookStatus[書籍貸出状態確認画面]\\n    BookStatus --> LendingConfirm[貸出内容確認画面]\\n    LendingConfirm --> LendingComplete[貸出完了画面]\\n    style Login fill:#f9f,stroke:#333,stroke-width:2px\\n    style Menu fill:#fff,stroke:#333,stroke-width:2px\\n    style BookLending fill:#bbf,stroke:#333,stroke-width:2px\\n    style UserInfo fill:#bbf,stroke:#333,stroke-width:2px\\n    style BookStatus fill:#bbf,stroke:#333,stroke-width:2px\\n    style LendingConfirm fill:#bbf,stroke:#333,stroke-width:2px\\n    style LendingComplete fill:#bbf,stroke:#333,stroke-width:2px\"\n}"
+    },
+    {
+      "id": "書籍返却管理",
+      "value": "{\n  \"mermaid\": \"graph LR\\n    Login[ログイン画面] --> Menu[メインメニュー]\\n    Menu --> ReturnList[返却管理一覧画面]\\n    ReturnList --> ReturnInput[返却処理入力画面]\\n    ReturnInput --> ReturnConfirm[返却内容確認画面]\\n    ReturnConfirm --> ReturnComplete[返却完了画面]\\n    ReturnConfirm --> ReturnInput\\n    ReturnComplete --> ReturnList\\n    ReturnList --> ReturnSearch[返却履歴検索画面]\\n    ReturnSearch --> ReturnDetail[返却詳細画面]\\n    ReturnDetail --> ReturnList\\n    ReturnList --> Menu\"\n}"
+    },
+    {
+      "id": "書籍マスター管理",
+      "value": "{\n  \"mermaid\": \"graph LR\\n    Login[ログイン画面] --> Menu[メインメニュー]\\n    Menu --> BookMaster[書籍マスター管理メニュー]\\n    BookMaster --> BookList[書籍一覧画面]\\n    BookList --> BookSearch[書籍検索画面]\\n    BookList --> BookRegister[書籍新規登録画面]\\n    BookList --> BookEdit[書籍情報編集画面]\\n    BookSearch --> BookList\\n    BookRegister --> DuplicateCheck[重複チェック画面]\\n    DuplicateCheck --> BookRegister\\n    DuplicateCheck --> BookList\\n    BookRegister --> BookList\\n    BookEdit --> BookList\\n    BookList --> Menu\"\n}"
+    },
+    {
+      "id": "延滞管理",
+      "value": "{\n    \"mermaid\": \"graph LR\\n    Login[ログイン画面] --> DelayTop[延滞管理トップ]\\n    DelayTop --> DelaySearch[延滞書籍検索画面]\\n    DelayTop --> DelayList[延滞者一覧画面]\\n    DelayTop --> DelayRecord[延滞記録管理画面]\\n    DelaySearch --> DelayResult[検索結果画面]\\n    DelayResult --> NoticeConf[通知確認画面]\\n    NoticeConf --> NoticeSend[通知送信画面]\\n    DelayList --> DelayDetail[延滞詳細画面]\\n    DelayDetail --> ExportConf[出力確認画面]\\n    DelayRecord --> RecordDetail[延滞記録詳細画面]\\n    RecordDetail --> MailHistory[メール送信履歴画面]\\n    DelayResult --> DelayDetail\\n    DelayDetail --> NoticeConf\"\n}"
+    },
+    {
+      "id": "利用者管理",
+      "value": "{\n  \"mermaid\": \"graph LR\\n    Login[ログイン画面] --> Menu[メインメニュー]\\n    Menu --> UserList[利用者一覧画面]\\n    UserList --> UserSearch[利用者検索画面]\\n    UserList --> UserAdd[利用者新規登録画面]\\n    UserList --> UserEdit[利用者情報編集画面]\\n    UserSearch --> UserList\\n    UserAdd --> DuplicateCheck[重複チェック確認画面]\\n    DuplicateCheck --> UserAdd\\n    DuplicateCheck --> UserConfirm[登録内容確認画面]\\n    UserConfirm --> UserComplete[登録完了画面]\\n    UserEdit --> UserUpdate[更新内容確認画面]\\n    UserUpdate --> UserComplete\\n    UserComplete --> UserList\"\n}"
+    },
+    {
+      "id": "貸出状況管理",
+      "value": "{\n    \"mermaid\": \"graph LR\\n    Login[ログイン画面] --> Menu[メインメニュー]\\n    Menu --> Status[貸出状況管理メニュー]\\n    Status --> BookStatus[書籍別貸出状況]\\n    Status --> UserStatus[利用者別貸出状況]\\n    Status --> Stats[貸出統計情報]\\n    BookStatus --> BookDetail[書籍貸出詳細表示]\\n    BookStatus --> BookList[書籍貸出一覧CSV]\\n    UserStatus --> UserDetail[利用者貸出詳細表示]\\n    UserStatus --> UserList[利用者貸出一覧CSV]\\n    Stats --> StatDetail[統計情報詳細表示]\\n    Stats --> StatExport[統計情報CSV出力]\\n    BookDetail --> Status\\n    UserDetail --> Status\\n    StatDetail --> Status\"\n}"
+    }
+  ]
+}

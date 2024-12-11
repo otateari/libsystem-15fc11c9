@@ -1,0 +1,29 @@
+{
+  "key": "sequenceDiagram",
+  "value": [
+    {
+      "id": "書籍貸出管理",
+      "value": "{\n  \"mermaid\": \"sequenceDiagram\\n    autonumber\\n    User->>Frontend: 利用者番号を入力\\n    Frontend->>Backend: 利用者情報照会リクエスト\\n    Backend->>DB: 利用者データ検索\\n    DB->>Backend: 利用者データ返却\\n    Backend->>DB: 貸出中書籍データ検索\\n    DB->>Backend: 貸出中書籍データ返却\\n    Backend->>Frontend: 利用者情報と貸出状況を返却\\n    Frontend->>User: 利用者情報を表示\\n    User->>Frontend: 書籍番号を入力\\n    Frontend->>Backend: 書籍貸出状態確認リクエスト\\n    Backend->>DB: 書籍状態検索\\n    DB->>Backend: 書籍状態データ返却\\n    Backend->>Frontend: 貸出可否を返却\\n    Frontend->>User: 貸出可否を表示\\n    User->>Frontend: 貸出実行ボタンをクリック\\n    Frontend->>Backend: 貸出処理リクエスト\\n    Backend->>Backend: 貸出期限計算\\n    Backend->>DB: 貸出記録登録\\n    DB->>Backend: 登録結果返却\\n    Backend->>Frontend: 貸出処理結果返却\\n    Frontend->>User: 貸出完了を表示\"\n}"
+    },
+    {
+      "id": "書籍返却管理",
+      "value": "{\n  \"mermaid\": \"sequenceDiagram\\n    actor User\\n    participant Frontend\\n    participant Backend\\n    participant DB\\n\\n    User->>Frontend: 返却書籍の番号を入力\\n    Frontend->>Backend: 書籍情報照会リクエスト\\n    Backend->>DB: 貸出情報取得クエリ\\n    DB-->>Backend: 貸出データ返却\\n    Backend-->>Frontend: 貸出情報を返却\\n    Frontend-->>User: 貸出情報を表示\\n\\n    User->>Frontend: 返却処理を実行\\n    Frontend->>Backend: 返却処理リクエスト\\n    Backend->>DB: トランザクション開始\\n    Backend->>DB: 貸出レコード更新\\n    Backend->>DB: 書籍状態更新\\n    DB-->>Backend: 更新完了\\n    Backend->>DB: トランザクション確定\\n    Backend-->>Frontend: 処理結果返却\\n    Frontend-->>User: 返却完了を表示\"\n}"
+    },
+    {
+      "id": "書籍マスター管理",
+      "value": "{\n  \"mermaid\": \"sequenceDiagram\\n    User->>Frontend: 書籍情報の入力\\n    Frontend->>Backend: 書籍重複チェックリクエスト\\n    Backend->>DB: ISBN/書籍番号で検索\\n    DB-->>Backend: 検索結果返却\\n    Backend-->>Frontend: 重複チェック結果返却\\n    alt 重複なしの場合\\n        Frontend->>Backend: 書籍情報登録リクエスト\\n        Backend->>DB: 書籍情報の登録\\n        DB-->>Backend: 登録結果返却\\n        Backend-->>Frontend: 登録完了通知\\n        Frontend-->>User: 登録完了表示\\n    else 重複ありの場合\\n        Frontend-->>User: 重複エラー表示\\n    end\\n    alt 更新の場合\\n        User->>Frontend: 書籍情報の更新\\n        Frontend->>Backend: 書籍情報更新リクエスト\\n        Backend->>DB: 書籍情報の更新\\n        DB-->>Backend: 更新結果返却\\n        Backend-->>Frontend: 更新完了通知\\n        Frontend-->>User: 更新完了表示\\n    end\"\n}"
+    },
+    {
+      "id": "延滞管理",
+      "value": "{\n  \"mermaid\": \"sequenceDiagram\\n    User->>Frontend: 延滞管理画面にアクセス\\n    Frontend->>Backend: 延滞書籍データ要求\\n    Backend->>DB: 延滞書籍検索クエリ実行\\n    DB-->>Backend: 検索結果返却\\n    Backend-->>Frontend: 延滞書籍リスト送信\\n    Frontend-->>User: 延滞書籍一覧表示\\n    User->>Frontend: 延滞通知送信指示\\n    Frontend->>Backend: 延滞通知送信要求\\n    Backend->>DB: 延滞者情報取得\\n    DB-->>Backend: 延滞者データ返却\\n    Backend->>Backend: メール内容生成\\n    Backend->>Backend: メール送信処理\\n    Backend->>DB: 通知記録保存\\n    DB-->>Backend: 保存完了通知\\n    Backend-->>Frontend: 送信完了通知\\n    Frontend-->>User: 送信完了メッセージ表示\\n    User->>Frontend: 延滞記録確認要求\\n    Frontend->>Backend: 延滞記録データ要求\\n    Backend->>DB: 延滞記録検索\\n    DB-->>Backend: 記録データ返却\\n    Backend-->>Frontend: 延滞記録送信\\n    Frontend-->>User: 延滞記録一覧表示\"\n}"
+    },
+    {
+      "id": "利用者管理",
+      "value": "{\n  \"mermaid\": \"sequenceDiagram\\n    autonumber\\n    User->>Frontend: 利用者登録画面を開く\\n    Frontend->>Backend: 画面表示データ要求\\n    Backend->>Frontend: フォーム初期データ返却\\n    Frontend->>User: 登録フォーム表示\\n    User->>Frontend: 利用者情報入力\\n    Frontend->>Backend: 重複チェック要求\\n    Backend->>DB: メールアドレス存在確認\\n    DB->>Backend: 確認結果返却\\n    Backend->>Frontend: 重複チェック結果返却\\n    alt 重複あり\\n        Frontend->>User: 重複エラー表示\\n    else 重複なし\\n        User->>Frontend: 登録実行\\n        Frontend->>Backend: 利用者情報登録要求\\n        Backend->>DB: 利用者情報登録\\n        DB->>Backend: 登録結果返却\\n        Backend->>Frontend: 登録完了通知\\n        Frontend->>User: 登録完了画面表示\\n    end\"\n}"
+    },
+    {
+      "id": "貸出状況管理",
+      "value": "{\n  \"mermaid\": \"sequenceDiagram\\n    autonumber\\n    actor Staff as 図書館職員\\n    participant Frontend\\n    participant Backend\\n    participant DB\\n    \\n    Staff->>Frontend: 貸出状況管理メニュー選択\\n    Frontend->>Backend: 貸出状況一覧リクエスト\\n    Backend->>DB: 貸出情報照会\\n    DB-->>Backend: 貸出データ返却\\n    Backend-->>Frontend: 貸出状況データ返却\\n    Frontend-->>Staff: 貸出状況メニュー表示\\n    \\n    alt 書籍別貸出状況\\n        Staff->>Frontend: 書籍番号入力\\n        Frontend->>Backend: 書籍貸出状況照会\\n        Backend->>DB: 書籍貸出履歴取得\\n        DB-->>Backend: 貸出履歴データ返却\\n        Backend-->>Frontend: 書籍貸出状況返却\\n        Frontend-->>Staff: 書籍貸出状況表示\\n    else 利用者別貸出状況\\n        Staff->>Frontend: 利用者番号入力\\n        Frontend->>Backend: 利用者貸出状況照会\\n        Backend->>DB: 利用者貸出履歴取得\\n        DB-->>Backend: 貸出履歴データ返却\\n        Backend-->>Frontend: 利用者貸出状況返却\\n        Frontend-->>Staff: 利用者貸出状況表示\\n    else 統計情報出力\\n        Staff->>Frontend: 集計期間選択\\n        Frontend->>Backend: 統計情報リクエスト\\n        Backend->>DB: 期間別貸出データ取得\\n        DB-->>Backend: 集計用データ返却\\n        Backend->>Backend: 統計情報集計処理\\n        Backend-->>Frontend: 統計情報返却\\n        Frontend-->>Staff: 統計情報表示\\n    end\"\n}"
+    }
+  ]
+}
